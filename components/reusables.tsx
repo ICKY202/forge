@@ -17,8 +17,8 @@ export const SectionLabel = ({children}: Readonly<{children: React.ReactNode}>) 
         </p>
 }
 
-export const sectionHeading = ({gray, blue}: Readonly<{gray: string, blue: string}>) => {
-    return <h2 className="font-serif text-[clamp(2rem, 2vw, 3rem)] leading-[1.1] tracking-tight">
+export const SectionHeading = ({gray, blue}: Readonly<{gray: string, blue: string}>) => {
+    return <h2 className="font-serif text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-tight">
         <GrayTitle>{gray}</GrayTitle><br />
         <BlueTitle>{blue}</BlueTitle>
     </h2>
