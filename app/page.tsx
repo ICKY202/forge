@@ -6,7 +6,7 @@ import { BlueTitle, GrayTitle, SectionHeading, SectionLabel } from "@/components
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, ChevronRight } from "lucide-react";
-import { SignInButton, SignUpButton, useAuth } from "@clerk/nextjs";
+import { PricingTable, SignInButton, SignUpButton, useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { FEATURES, PLACEHOLDERS, STEPS, SUGGESTIONS } from "@/lib/data";
 
@@ -118,7 +118,7 @@ export default function Home() {
         </div>
         <p className="mt-10 text-xs text-white/20"> No credit card required · 10 free generations on sign up</p>
       </section>
-
+          {/* Workspace preview */}
       <section className="px-4 pb-32">
         <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-white/8 bg-[#0f0f0f] shadow-2xl shadow-black/60">
           <div className="flex items-center gap-2 border-b border-white/6 px-4 py-3">
@@ -293,6 +293,23 @@ export default function Home() {
             <SectionHeading gray="Starts free" blue="scale when ready"></SectionHeading>
             <p className="mx-auto mt-4 max-w-sm text-sm text-white/35">No credit card required. Upgrade or downgrade anytime.</p>
           </div>
+          {/* plan cards */}
+          <div className="mx-auto max-w-5xl">
+            <PricingTable 
+              checkoutProps={
+                {
+                  appearance: {
+                    elements: {
+                      drawerRoot: {
+                        zIndex: 2000
+                      }
+                    }
+                  }
+                }
+              }
+            />
+          </div>
+
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3">
             <div className="relative flex flex-col rounded-2xl border p-7 transition-colors border-white/8 bg-[#0f0f0f]">
               <div className="mb-1 flex items-center gap-2"><p className="text-sm font-semibold text-white/90">Free</p></div>

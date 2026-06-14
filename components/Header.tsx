@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { ArrowRight, Zap } from 'lucide-react'
 import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 import { Button } from './ui/button'
+import { PricingModal } from './PricingModal'
 
 export default function Header() {
   return (
@@ -29,10 +30,12 @@ export default function Header() {
                 >
                     Projects
                 </Link>
-                <span className='h-8 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 text-xs text-white/70'>
-                    <Zap className='h-3 w-3 fill-white/70'/>
-                    3 / 40 credits
-                </span>
+                <PricingModal>
+                  <span className='h-8 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 text-xs text-white/70'>
+                      <Zap className='h-3 w-3 fill-white/70'/>
+                      3 / 40 credits
+                  </span>
+                </PricingModal>
 
                 <UserButton />
             </Show>
